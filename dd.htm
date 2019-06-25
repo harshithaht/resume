@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset='UTF-8<script type="text/javascript"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>'/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://www.howdesign.com/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="https://s22294.pcdn.co/wp-content/themes/hd-twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<!-- DEVOPS-9719 Add script tag -->
+<script>
+/*!function(f,e,a,t,h,r){if(!f[h]){r=f[h]=function()
+
+{ r.invoke? r.invoke.apply(r,arguments):r.queue.push(arguments)}
+,
+r.queue=[],r.loaded=1*new Date,r.version="1.0.0",
+f.FeathrBoomerang=r;var g=e.createElement(a),
+h=e.getElementsByTagName("head")[0]||e.getElementsByTagName("script")[0].parentNode;
+g.async=!0,g.src=t,h.appendChild(g)}
+}(window,document,"script","https://cdn.feathr.co/js/boomerang.min.js","feathr");
+
+feathr("fly", "56def5418e80271df973a9a7");
+feathr("sprinkle", "page_view");*/
+</script>
+<!-- DEVOPS-9719 END -->
+
+<script type="text/javascript">
+var dataLayer = [];
+</script>
+<script type="text/javascript" src="//assets.adobedtm.com/eeabfecf1ea8efeee8089b11ad6abf60b1923718/satelliteLib-75ece947334e84857cbf24e6f743caf4de53db34.js"></script>
+<meta name="adobe-dtm-wordpress" content="true">
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- This site is optimized with the Yoast SEO plugin v11.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Logo Design Ideas: 5 Tried and True Design Devices</title>
+<meta name="description" content="Check out these time-honored graphic styles to get some ideas for your next logo design. [And don&#039;t miss the HOW Logo Design Awards deadline—Monday night!]"/>
+<link rel="canonical" href="https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Logo Design Ideas: 5 Tried and True Design Devices" />
+<meta property="og:description" content="Check out these time-honored graphic styles to get some ideas for your next logo design. [And don&#039;t miss the HOW Logo Design Awards deadline—Monday night!]" />
+<meta property="og:url" content="https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/" />
+<meta property="og:site_name" content="HOW Design" />
+<meta property="article:tag" content="HOW logo design awards" />
+<meta property="article:tag" content="Logo Design" />
+<meta property="article:tag" content="logo design ideas" />
+<meta property="article:tag" content="logo design inspiration" />
+<meta property="article:tag" content="LogoLounge" />
+<meta property="article:section" content="Graphic Design Basics" />
+<meta property="article:published_time" content="2018-10-18T04:04:25+00:00" />
+<meta property="article:modified_time" content="2018-10-18T19:49:38+00:00" />
+<meta property="og:updated_time" content="2018-10-18T19:49:38+00:00" />
+<meta property="og:image" content="https://s22294.pcdn.co/wp-content/uploads/10784_271113.jpg" />
+<meta property="og:image:secure_url" content="https://s22294.pcdn.co/wp-content/uploads/10784_271113.jpg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="800" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Check out these time-honored graphic styles to get some ideas for your next logo design. [And don&#039;t miss the HOW Logo Design Awards deadline—Monday night!]" />
+<meta name="twitter:title" content="Logo Design Ideas: 5 Tried and True Design Devices" />
+<meta name="twitter:site" content="@howbrand" />
+<meta name="twitter:image" content="https://s22294.pcdn.co/wp-content/uploads/10784_271113.jpg" />
+<meta name="twitter:creator" content="@howbrand" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.howdesign.com/#organization","name":"HOW Design","url":"https://www.howdesign.com/","sameAs":["https://twitter.com/howbrand"]},{"@type":"WebSite","@id":"https://www.howdesign.com/#website","url":"https://www.howdesign.com/","name":"HOW Design","publisher":{"@id":"https://www.howdesign.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.howdesign.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#webpage","url":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/","inLanguage":"en-US","name":"Logo Design Ideas: 5 Tried and True Design Devices","isPartOf":{"@id":"https://www.howdesign.com/#website"},"image":{"@type":"ImageObject","@id":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#primaryimage","url":"https://s22294.pcdn.co/wp-content/uploads/10784_271113.jpg","width":800,"height":800,"caption":"logo design ideas; handcrafted logotypes"},"primaryImageOfPage":{"@id":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#primaryimage"},"datePublished":"2018-10-18T04:04:25+00:00","dateModified":"2018-10-18T19:49:38+00:00","description":"Check out these time-honored graphic styles to get some ideas for your next logo design. [And don't miss the HOW Logo Design Awards deadline\u2014Monday night!]"},{"@type":"Article","@id":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#article","isPartOf":{"@id":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#webpage"},"author":{"@id":"https://www.howdesign.com/author/emilypotts/#author"},"headline":"5 Tried and True Design Devices for Logo Designers","datePublished":"2018-10-18T04:04:25+00:00","dateModified":"2018-10-18T19:49:38+00:00","commentCount":"4","mainEntityOfPage":{"@id":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#webpage"},"publisher":{"@id":"https://www.howdesign.com/#organization"},"image":{"@id":"https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#primaryimage"},"keywords":"HOW logo design awards,Logo Design,logo design ideas,logo design inspiration,LogoLounge","articleSection":"Design Inspiration: Ideas &amp; How-to Advice for Designers,Design News,Editor's Picks,Graphic Design Basics,HOW Blog"},{"@type":["Person"],"@id":"https://www.howdesign.com/author/emilypotts/#author","name":"Emily Potts","image":{"@type":"ImageObject","@id":"https://www.howdesign.com/#authorlogo","url":"https://secure.gravatar.com/avatar/a6ffd0b829ea3d028647dbec4bc801d4?s=96&d=blank&r=g","caption":"Emily Potts"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//www.howdesign.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="HOW Design &raquo; Feed" href="https://www.howdesign.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="HOW Design &raquo; Comments Feed" href="https://www.howdesign.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="HOW Design &raquo; 5 Tried and True Design Devices for Logo Designers Comments Feed" href="https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s22294.pcdn.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<!-- managing ads with Advanced Ads – https://wpadvancedads.com/ --><script>
+					advanced_ads_ready=function(){var fns=[],listener,doc=typeof document==="object"&&document,hack=doc&&doc.documentElement.doScroll,domContentLoaded="DOMContentLoaded",loaded=doc&&(hack?/^loaded|^c/:/^loaded|^i|^c/).test(doc.readyState);if(!loaded&&doc){listener=function(){doc.removeEventListener(domContentLoaded,listener);window.removeEventListener("load",listener);loaded=1;while(listener=fns.shift())listener()};doc.addEventListener(domContentLoaded,listener);window.addEventListener("load",listener)}return function(fn){loaded?setTimeout(fn,0):fns.push(fn)}}();
+			</script><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://s22294.pcdn.co/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://s22294.pcdn.co/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-my-login-css'  href='https://s22294.pcdn.co/wp-content/plugins/theme-my-login/assets/styles/theme-my-login.min.css?ver=7.0.14' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-0-css'  href='https://s22294.pcdn.co/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/jquery.fancybox-1.3.4.css?ver=3.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://s22294.pcdn.co/wp-includes/css/dashicons.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css'  href='https://s22294.pcdn.co/wp-content/themes/hd-twentytwelve/style.css?ver=1.4' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://s22294.pcdn.co/wp-content/themes/hd-twentytwelve/ie.css?ver=1.4' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='wp-form-css'  href='https://s22294.pcdn.co/wp-content/plugins/fw-exacttarget-forms/css/frontend.form.css?ver=0.1.0' type='text/css' media='screen' />
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type='text/javascript' src='https://s22294.pcdn.co/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://s22294.pcdn.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var photocrati_ajax = {"url":"https:\/\/www.howdesign.com\/?photocrati_ajax=1","wp_home_url":"https:\/\/www.howdesign.com","wp_site_url":"https:\/\/www.howdesign.com","wp_root_url":"https:\/\/www.howdesign.com","wp_plugins_url":"https:\/\/www.howdesign.com\/wp-content\/plugins","wp_content_url":"https:\/\/www.howdesign.com\/wp-content","wp_includes_url":"https:\/\/www.howdesign.com\/wp-includes\/","ngg_param_slug":"nggallery"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s22294.pcdn.co/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/ajax/static/ajax.min.js?ver=3.2.4'></script>
+<script type='text/javascript' src='https://s22294.pcdn.co/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.9.2'></script>
+<script type='text/javascript' src='https://s22294.pcdn.co/wp-content/plugins/fw-exacttarget-forms/js/et_onsubmit.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?onload=etCaptchaInit&#038;render=explicit&#038;ver=5.1.1'></script>
+<script type='text/javascript' src='https://s22294.pcdn.co/wp-content/plugins/google-analyticator/external-tracking.min.js?ver=6.5.4'></script>
+<link rel='https://api.w.org/' href='https://www.howdesign.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.howdesign.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s22294.pcdn.co/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel='shortlink' href='https://www.howdesign.com/?p=242820' />
+<link rel="alternate" type="application/json+oembed" href="https://www.howdesign.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.howdesign.com%2Fgraphic-design-basics%2F5-tried-and-true-design-devices-logo-design-ideas%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.howdesign.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.howdesign.com%2Fgraphic-design-basics%2F5-tried-and-true-design-devices-logo-design-ideas%2F&#038;format=xml" />
+<!-- <meta name="NextGEN" version="3.2.4" /> -->
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	dataLayer.push({"pagePostType":"post","pagePostType2":"single-post","pageCategory":["how-to","design-news","editors-picks","graphic-design-basics","how-design-blog"],"pageAttributes":["how-logo-design-awards","logo-design","logo-design-ideas","logo-design-inspiration","logolounge"],"pagePostAuthor":"Emily Potts"});//]]>
+</script>
+<script data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TJ6THQ');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><script type="text/javascript" src="https://s22294.pcdn.co/wp-content/plugins/si-captcha-for-wordpress/captcha/si_captcha.js?ver=1561456057"></script>
+<!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css">
+.si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
+.si_captcha_large { width:250px; height:60px; padding-top:10px; padding-bottom:10px; }
+img#si_image_com { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_reg { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_log { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_checkout { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_jetpack { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_bbpress_topic { border-style:none; margin:0; padding-right:5px; float:left; }
+.si_captcha_refresh { border-style:none; margin:0; vertical-align:bottom; }
+div#si_captcha_input { display:block; padding-top:15px; padding-bottom:5px; }
+label#si_captcha_code_label { margin:0; }
+input#si_captcha_code_input { width:65px; }
+p#si_captcha_code_p { clear: left; padding-top:10px; }
+.si-captcha-jetpack-error { color:#DC3232; }
+</style>
+<!-- end SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-image: url("https://s22294.pcdn.co/wp-content/uploads/adobe-backdrop-for-ad.jpg"); background-position: center top; background-size: auto; background-repeat: no-repeat; background-attachment: scroll; }
+</style>
+	<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+</script><!-- Google Analytics Tracking by Google Analyticator 6.5.4: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">
+    var analyticsFileTypes = ['pdf'];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-445948-2', 'auto');
+ 
+	ga('send', 'pageview');
+</script>
+		<style type="text/css" id="wp-custom-css">
+			/*---------------------------------------------------------------------
+|           New Competition Page Styles for Templates                 |
+|           Built by Leila Baker | leila.baker@fwmedia.com            |
+|           Last Updated August 2017                                   |
+---------------------------------------------------------------------*/
+/*-----------------
+    Universal Styles
+-------------------*/
+.topCompBanner {
+    margin-bottom:10px;
+}
+.compWrapper p {
+    margin-bottom: 8px;
+}
+.enter-modifyCompEntryBlock {
+    text-align:center;
+}
+a.compButton {
+    margin:auto;
+    background-color:#005F92;
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    padding:7px 20px;
+    border-radius:3px;
+}
+.compCategoriesTable {
+    border-bottom: 0 !important;
+    color:#333 !important;
+    margin:0 !important;
+    font-size: 13px !important;
+}
+.compCategoriesTable td {
+    width: 50%;
+    padding:5px 20px 10px 20px !important;
+    vertical-align:top;
+}
+.compCategoriesList {
+    overflow:hidden;
+    margin-bottom:0 !important;
+}
+.compCategoriesList li {
+    line-height: 1.5em;
+    list-style-type:none;
+    margin-left:0 !important;
+}
+.compDescription ul {
+    width:100%;
+    list-style-type:none;
+    text-align:center;
+}
+.compDescription ul li {
+    display:inline-block;
+    margin-left:10px;
+}
+.compContent {
+    border-top:1px dashed #999999;
+    border-bottom:1px dashed #999999;
+    margin:20px 0 20px 0;
+    padding:20px 0 20px 0;
+}
+h3.compHeader {
+    margin:0 !important;
+}
+.compContent h3 {
+    text-transform: uppercase;
+}
+.compWrapper p {
+    margin: 15px 0 0 0 !important;
+}
+.compWrapper ul {
+    line-height:16px;
+}
+.compWrapper ul li {
+    margin-bottom:4px;
+}
+td.compHeaderBox {
+    padding-bottom: 0 !important;
+    margin: 0;
+}
+.compContent .compQuote {
+    font-style: italic;
+    font-size: 16px;
+border-top:1px dashed #999999;
+padding-top:30px;
+}
+.compContent .compQuote cite {
+    display:block;
+    font-style: normal !important;
+    font-size: 14px;
+    text-align: right;
+    padding-top: 7px;
+}
+.competitionsNewsletterBox {
+    border-top: 1px dashed #999999;
+}
+.competitionsNewsletterBox .newsletterContainer {
+width: 350px; 
+margin: auto;
+}
+/*-----------------
+    Promo Styles
+-------------------*/
+
+.compCategoriesPromo {
+    background-color: #FFE5BC;
+    padding: 10px;
+    margin: 15px 0;
+}
+.compContentPromo strong {
+    border-bottom: 2px solid #FEC463;
+}
+
+/*---------------------
+    Logo Styles
+-----------------------*/
+
+.compCategoriesLogo {
+    background-color: #fcc3b9;
+    padding: 10px;
+    margin: 15px 0;
+}
+.compContentLogo strong {
+    border-bottom: 2px solid #FB7E6A;
+}
+
+/*---------------------
+    International Styles
+-----------------------*/
+
+.compCategoriesIntl {
+    background-color: #dbeab9;
+    padding: 10px;
+    margin: 15px 0;
+}
+.compContentIntl strong {
+    border-bottom: 2px solid #C2D887;
+}
+
+/*---------------------
+    In-House Styles
+-----------------------*/
+
+.compCategoriesInHouse {
+    background-color: #b3dfe1;
+    padding: 10px;
+    margin: 15px 0;
+}
+.compContentInHouse strong {
+    border-bottom: 2px solid #53CAD0;
+}
+
+/*
+END new competition template styles
+*/		</style>
+		<style type="text/css">/** Saturday 8th June 2019 04:39:53 UTC (core) **//** THIS FILE IS AUTOMATICALLY GENERATED - DO NOT MAKE MANUAL EDITS! **//** Custom CSS should be added to Mega Menu > Menu Themes > Custom Styling **/.mega-menu-last-modified-1559968793 {	content: 'Saturday 8th June 2019 04:39:53 UTC';}#mega-menu-wrap-primary, #mega-menu-wrap-primary #mega-menu-primary, #mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-row, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-column, #mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link {transition: none;-webkit-border-radius: 0 0 0 0;-moz-border-radius: 0 0 0 0;-ms-border-radius: 0 0 0 0;-o-border-radius: 0 0 0 0;border-radius: 0 0 0 0;-webkit-box-shadow: none;-moz-box-shadow: none;-ms-box-shadow: none;-o-box-shadow: none;box-shadow: none;background: none;border: 0;bottom: auto;box-sizing: border-box;clip: auto;color: #666;display: block;float: none;font-family: inherit;font-size: 14px;height: auto;left: auto;line-height: 1.7;list-style-type: none;margin: 0;min-height: auto;max-height: none;opacity: 1;outline: none;overflow: visible;padding: 0;position: relative;pointer-events: auto;right: auto;text-align: left;text-decoration: none;text-indent: 0;text-transform: none;transform: none;top: auto;vertical-align: baseline;visibility: inherit;width: auto;word-wrap: break-word;}#mega-menu-wrap-primary:before, #mega-menu-wrap-primary #mega-menu-primary:before, #mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu:before, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item:before, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-row:before, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-column:before, #mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link:before, #mega-menu-wrap-primary:after, #mega-menu-wrap-primary #mega-menu-primary:after, #mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-row:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-column:after, #mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link:after {display: none;}#mega-menu-wrap-primary {-webkit-border-radius: 0px 0px 0px 0px;-moz-border-radius: 0px 0px 0px 0px;-ms-border-radius: 0px 0px 0px 0px;-o-border-radius: 0px 0px 0px 0px;border-radius: 0px 0px 0px 0px;}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary {background: #222;}}#mega-menu-wrap-primary.mega-keyboard-navigation .mega-menu-toggle:focus, #mega-menu-wrap-primary.mega-keyboard-navigation .mega-toggle-block:focus, #mega-menu-wrap-primary.mega-keyboard-navigation .mega-toggle-block a:focus, #mega-menu-wrap-primary.mega-keyboard-navigation .mega-toggle-block .mega-search input[type=text]:focus, #mega-menu-wrap-primary.mega-keyboard-navigation .mega-toggle-block button.mega-toggle-animated:focus, #mega-menu-wrap-primary.mega-keyboard-navigation #mega-menu-primary a:focus, #mega-menu-wrap-primary.mega-keyboard-navigation #mega-menu-primary input:focus, #mega-menu-wrap-primary.mega-keyboard-navigation #mega-menu-primary li.mega-menu-item a.mega-menu-link:focus {outline: 3px solid #109cde;outline-offset: -3px;}#mega-menu-wrap-primary.mega-keyboard-navigation .mega-toggle-block button.mega-toggle-animated:focus {outline-offset: 2px;}#mega-menu-wrap-primary.mega-keyboard-navigation > li.mega-menu-item > a.mega-menu-link:focus {background: #333;color: #fff;font-weight: bold;text-decoration: none;border-color: #fff;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary.mega-keyboard-navigation > li.mega-menu-item > a.mega-menu-link:focus {color: #fff;background: #333;}}#mega-menu-wrap-primary #mega-menu-primary {visibility: visible;text-align: center;padding: 0px 0px 0px 0px;}#mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link {cursor: pointer;display: inline;}#mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link .mega-description-group {vertical-align: middle;display: inline-block;transition: none;}#mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link .mega-description-group .mega-menu-title, #mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link .mega-description-group .mega-menu-description {transition: none;line-height: 1.5;display: block;}#mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link .mega-description-group .mega-menu-description {font-style: italic;font-size: 0.8em;text-transform: none;font-weight: normal;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu li.mega-menu-item.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link {display: flex;align-items: center;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu li.mega-menu-item.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link:before {flex: 0 0 auto;align-self: flex-start;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-tabbed.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link {display: block;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-icon-top > a.mega-menu-link {display: table-cell;vertical-align: middle;line-height: initial;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-icon-top > a.mega-menu-link:before {display: block;margin: 0 0 6px 0;text-align: center;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-icon-top > a.mega-menu-link > span.mega-title-below {display: inline-block;transition: none;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-icon-top > a.mega-menu-link {display: block;line-height: 40px;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-icon-top > a.mega-menu-link:before {display: inline-block;margin: 0 6px 0 0;text-align: left;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-icon-right > a.mega-menu-link:before {float: right;margin: 0 0 0 6px;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-animating > ul.mega-sub-menu {pointer-events: none;}#mega-menu-wrap-primary #mega-menu-primary li.mega-disable-link > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu li.mega-disable-link > a.mega-menu-link {cursor: default;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children.mega-disable-link > a.mega-menu-link {cursor: pointer;}#mega-menu-wrap-primary #mega-menu-primary p {margin-bottom: 10px;}#mega-menu-wrap-primary #mega-menu-primary input, #mega-menu-wrap-primary #mega-menu-primary img {max-width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item > ul.mega-sub-menu {display: block;visibility: hidden;opacity: 1;pointer-events: auto;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item > ul.mega-sub-menu {display: none;visibility: visible;opacity: 1;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu.mega-menu-item.mega-toggle-on ul.mega-sub-menu {display: block;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu.mega-menu-item.mega-toggle-on li.mega-hide-sub-menu-on-mobile > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary li.mega-hide-sub-menu-on-mobile > ul.mega-sub-menu {display: none;}}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary[data-effect="fade"] li.mega-menu-item > ul.mega-sub-menu {opacity: 0;transition: opacity 200ms ease-in, visibility 200ms ease-in;}#mega-menu-wrap-primary #mega-menu-primary[data-effect="fade"].mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade"].mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {opacity: 1;}#mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"] li.mega-menu-item.mega-menu-flyout ul.mega-sub-menu {opacity: 0;transform: translate(0, 10px);transition: opacity 200ms ease-in, transform 200ms ease-in, visibility 200ms ease-in;}#mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"].mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"].mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {opacity: 1;transform: translate(0, 0);}#mega-menu-wrap-primary #mega-menu-primary[data-effect="slide_up"] li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="slide_up"] li.mega-menu-item.mega-menu-flyout ul.mega-sub-menu {transform: translate(0, 10px);transition: transform 200ms ease-in, visibility 200ms ease-in;}#mega-menu-wrap-primary #mega-menu-primary[data-effect="slide_up"].mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="slide_up"].mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="slide_up"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary[data-effect="slide_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {transform: translate(0, 0);}}#mega-menu-wrap-primary #mega-menu-primary.mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary.mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu {visibility: visible;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-menu-megamenu ul.mega-sub-menu ul.mega-sub-menu {visibility: inherit;opacity: 1;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item a[class^='dashicons']:before {font-family: dashicons;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item a.mega-menu-link:before {display: inline-block;font: inherit;font-family: dashicons;position: static;margin: 0 6px 0 0px;vertical-align: top;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: inherit;background: transparent;height: auto;width: auto;top: auto;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-hide-text a.mega-menu-link:before {margin: 0;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-hide-text li.mega-menu-item a.mega-menu-link:before {margin: 0 6px 0 0;}#mega-menu-wrap-primary #mega-menu-primary li.mega-align-bottom-left.mega-toggle-on > a.mega-menu-link {-webkit-border-radius: 0px 0px 0 0;-moz-border-radius: 0px 0px 0 0;-ms-border-radius: 0px 0px 0 0;-o-border-radius: 0px 0px 0 0;border-radius: 0px 0px 0 0;}#mega-menu-wrap-primary #mega-menu-primary li.mega-align-bottom-right > ul.mega-sub-menu {right: 0;}#mega-menu-wrap-primary #mega-menu-primary li.mega-align-bottom-right.mega-toggle-on > a.mega-menu-link {-webkit-border-radius: 0px 0px 0 0;-moz-border-radius: 0px 0px 0 0;-ms-border-radius: 0px 0px 0 0;-o-border-radius: 0px 0px 0 0;border-radius: 0px 0px 0 0;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-menu-item {position: static;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item {margin: 0 0px 0 0;display: inline-block;height: auto;vertical-align: middle;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-item-align-right {float: right;}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-item-align-right {margin: 0 0 0 0px;}}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-item-align-float-left {float: left;}}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link:hover {background: #333;color: #fff;font-weight: bold;text-decoration: none;border-color: #fff;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-toggle-on > a.mega-menu-link {background: #333;color: #fff;font-weight: bold;text-decoration: none;border-color: #fff;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-toggle-on > a.mega-menu-link {color: #fff;background: #333;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {background: #333;color: #fff;font-weight: bold;text-decoration: none;border-color: #fff;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {color: #fff;background: #333;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {border-top: 0px solid #fff;border-left: 0px solid #fff;border-right: 0px solid #fff;border-bottom: 0px solid #fff;outline: none;text-decoration: none;padding: 0px 5px 0px 5px;line-height: 40px;font-weight: bold;height: 40px;vertical-align: baseline;text-align: left;width: auto;display: block;color: #fff;text-transform: none;text-decoration: none;background: rgba(0, 0, 0, 0);-webkit-border-radius: 0px 0px 0px 0px;-moz-border-radius: 0px 0px 0px 0px;-ms-border-radius: 0px 0px 0px 0px;-o-border-radius: 0px 0px 0px 0px;border-radius: 0px 0px 0px 0px;font-family: inherit;font-size: 12px;}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-multi-line > a.mega-menu-link {line-height: inherit;display: table-cell;vertical-align: middle;}}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-multi-line > a.mega-menu-link br {display: none;}}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item {display: list-item;margin: 0;clear: both;border: 0;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-item-align-right {float: none;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {-webkit-border-radius: 0 0 0 0;-moz-border-radius: 0 0 0 0;-ms-border-radius: 0 0 0 0;-o-border-radius: 0 0 0 0;border-radius: 0 0 0 0;border: 0;margin: 0;line-height: 40px;height: 40px;padding: 0 10px;background: transparent;text-align: left;color: #fff;font-size: 14px;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row {width: 100%;float: left;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row .mega-menu-column {float: left;min-height: 1px;}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-1 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-2 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-2 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-3 {width: 33.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-3 {width: 66.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-3 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-4 {width: 25%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-4 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-4 {width: 75%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-4 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-5 {width: 20%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-5 {width: 40%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-5 {width: 60%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-5 {width: 80%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-5 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-6 {width: 16.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-6 {width: 33.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-6 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-6 {width: 66.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-6 {width: 83.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-6 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-7 {width: 14.28571%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-7 {width: 28.57143%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-7 {width: 42.85714%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-7 {width: 57.14286%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-7 {width: 71.42857%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-7 {width: 85.71429%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-7 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-8 {width: 12.5%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-8 {width: 25%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-8 {width: 37.5%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-8 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-8 {width: 62.5%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-8 {width: 75%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-8 {width: 87.5%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-8 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-9 {width: 11.11111%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-9 {width: 22.22222%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-9 {width: 33.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-9 {width: 44.44444%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-9 {width: 55.55556%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-9 {width: 66.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-9 {width: 77.77778%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-9 {width: 88.88889%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-9 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-10 {width: 10%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-10 {width: 20%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-10 {width: 30%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-10 {width: 40%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-10 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-10 {width: 60%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-10 {width: 70%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-10 {width: 80%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-10 {width: 90%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-10-of-10 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-11 {width: 9.09091%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-11 {width: 18.18182%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-11 {width: 27.27273%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-11 {width: 36.36364%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-11 {width: 45.45455%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-11 {width: 54.54545%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-11 {width: 63.63636%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-11 {width: 72.72727%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-11 {width: 81.81818%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-10-of-11 {width: 90.90909%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-11-of-11 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-12 {width: 8.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-12 {width: 16.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-12 {width: 25%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-12 {width: 33.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-12 {width: 41.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-12 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-12 {width: 58.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-12 {width: 66.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-12 {width: 75%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-10-of-12 {width: 83.33333%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-11-of-12 {width: 91.66667%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-12-of-12 {width: 100%;}}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-column {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-column.mega-menu-clear {clear: left;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row .mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {padding: 15px 10px 15px 10px;width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {z-index: 999;-webkit-border-radius: 0px 0px 0px 0px;-moz-border-radius: 0px 0px 0px 0px;-ms-border-radius: 0px 0px 0px 0px;-o-border-radius: 0px 0px 0px 0px;border-radius: 0px 0px 0px 0px;background: #3a6d77;padding: 0px 0px 0px 0px;position: absolute;width: 100%;border-top: 0px solid #fff;border-left: 0px solid #fff;border-right: 0px solid #fff;border-bottom: 1px solid #fff;max-width: none;left: 0;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {float: left;position: static;width: 100%;}}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-1 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-2 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-2 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-3 {width: 33.33333%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-3 {width: 66.66667%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-3 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-4 {width: 25%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-4 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-4 {width: 75%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-4 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-5 {width: 20%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-5 {width: 40%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-5 {width: 60%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-5 {width: 80%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-5 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-6 {width: 16.66667%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-6 {width: 33.33333%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-6 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-6 {width: 66.66667%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-6 {width: 83.33333%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-6 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-7 {width: 14.28571%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-7 {width: 28.57143%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-7 {width: 42.85714%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-7 {width: 57.14286%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-7 {width: 71.42857%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-7 {width: 85.71429%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-7-of-7 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-8 {width: 12.5%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-8 {width: 25%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-8 {width: 37.5%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-8 {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-8 {width: 62.5%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-8 {width: 75%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-7-of-8 {width: 87.5%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-8-of-8 {width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-9 {width: 11.11111%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-9 {width: 22.22222%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-9 {width: 33.33333%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-9 {width: 44.44444%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-9 {width: 55.55556%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-9 {width: 66.66667%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-7-of-9 {width: 77.77778%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-8-of-9 {width: 88.88889%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-9-of-9 {width: 100%;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu .mega-description-group .mega-menu-description {margin: 5px 0;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item ul.mega-sub-menu {clear: both;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {margin-left: 10px;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu ul.mega-sub-menu ul.mega-sub-menu {margin-left: 10px;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {color: #666;font-family: inherit;font-size: 14px;display: block;float: left;clear: none;padding: 15px 10px 15px 10px;vertical-align: top;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.mega-menu-clear, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-menu-clear {clear: left;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title {color: #555;font-family: inherit;font-size: 16px;text-transform: uppercase;text-decoration: none;font-weight: bold;margin: 0px 0px 0px 0px;padding: 0px 0px 5px 0px;vertical-align: top;display: block;visibility: inherit;border-top: 0px solid #555;border-left: 0px solid #555;border-right: 0px solid #555;border-bottom: 0px solid #555;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {/* Mega Menu > Menu Themes > Mega Menus > Second Level Menu Items */color: #555;font-family: inherit;font-size: 16px;text-transform: uppercase;text-decoration: none;font-weight: bold;margin: 0px 0px 0px 0px;padding: 0px 0px 0px 0px;vertical-align: top;display: block;border-top: 0px solid #555;border-left: 0px solid #555;border-right: 0px solid #555;border-bottom: 0px solid #555;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {/* Mega Menu > Menu Themes > Mega Menus > Second Level Menu Items (Hover) */color: #555;font-weight: bold;text-decoration: none;background: rgba(0, 0, 0, 0);}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link {/* Mega Menu > Menu Themes > Mega Menus > Third Level Menu Items */color: #666;font-family: inherit;font-size: 14px;text-transform: none;text-decoration: none;font-weight: normal;margin: 0;padding: 0px 0px 0px 0px;vertical-align: top;display: block;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item.mega-icon-left.mega-has-description.mega-has-icon > a.mega-menu-link {display: flex;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:focus, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:focus {/* Mega Menu > Menu Themes > Mega Menus > Third Level Menu Items (Hover) */color: #666;font-weight: normal;text-decoration: none;background: rgba(0, 0, 0, 0);}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {border: 0;padding: 10px;-webkit-border-radius: 0 0 0 0;-moz-border-radius: 0 0 0 0;-ms-border-radius: 0 0 0 0;-o-border-radius: 0 0 0 0;border-radius: 0 0 0 0;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item {width: 50%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li:nth-child(odd) {clear: left;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {color: #666;font-family: inherit;font-size: 14px;text-transform: none;text-decoration: none;font-weight: normal;margin: 0;border: 0;padding: 0px 0px 0px 0px;vertical-align: top;display: block;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {color: #666;font-weight: normal;text-decoration: none;background: rgba(0, 0, 0, 0);}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu {z-index: 999;position: absolute;width: 250px;border-top: 0px solid #fff;border-left: 0px solid #fff;border-right: 0px solid #fff;border-bottom: 0px solid #fff;padding: 0px 0px 0px 0px;background: #3a6d77;max-width: none;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu {float: left;position: static;width: 100%;padding: 0;border: 0;}}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item {clear: both;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {display: block;background: #f1f1f1;color: #666;font-family: inherit;font-size: 14px;font-weight: normal;padding: 0px 10px 0px 10px;line-height: 35px;text-decoration: none;text-transform: none;vertical-align: baseline;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:first-child > a.mega-menu-link {border-top-left-radius: 0px;border-top-right-radius: 0px;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:first-child > a.mega-menu-link {border-top-left-radius: 0;border-top-right-radius: 0;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:last-child > a.mega-menu-link {border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:last-child > a.mega-menu-link {border-bottom-right-radius: 0;border-bottom-left-radius: 0;}}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:focus {background: #ddd;font-weight: normal;text-decoration: none;color: #666;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {position: absolute;left: 100%;top: 0;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {position: static;left: 0;width: 100%;}#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu a.mega-menu-link {padding-left: 20px;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link span.mega-indicator:after {content: '';display: inline-block;font-family: dashicons;margin: 0 0 0 6px;vertical-align: top;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;transform: rotate(0);color: inherit;position: relative;background: transparent;height: auto;width: auto;right: auto;line-height: inherit;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator {display: none;float: right;height: auto;width: auto;background: transparent;position: relative;pointer-events: auto;left: auto;min-width: auto;line-height: inherit;color: inherit;font-size: inherit;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator:after {content: '';}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link:after {display: none;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator {display: inline-block;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator:after {content: '';}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children.mega-toggle-on > a.mega-menu-link > span.mega-indicator:after {content: '';}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children.mega-hide-sub-menu-on-mobile > a.mega-menu-link > span.mega-indicator {display: none;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu:not(.mega-menu-tabbed) li.mega-menu-item-has-children > a.mega-menu-link:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu:not(.mega-menu-tabbed) li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children.mega-hide-arrow > a.mega-menu-link:after {display: none;}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item li.mega-menu-item-has-children > a.mega-menu-link:after {content: '';float: right;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item li.mega-menu-item-has-children > a.mega-menu-link:after {content: '';}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link {text-align: right;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link {text-align: left;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link:before {float: right;margin: 0 0 0 6px;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link:before {float: left;margin: 0 6px 0 0;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item-has-children > a.mega-menu-link:after {content: '';float: left;margin: 0;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item-has-children > a.mega-menu-link:after {content: '';float: right;}}#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {left: -100%;top: 0;}#mega-menu-wrap-primary #mega-menu-primary li[class^='mega-lang-item'] > a.mega-menu-link > img {display: inline;}#mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link > img.wpml-ls-flag, #mega-menu-wrap-primary #mega-menu-primary a.mega-menu-link > img.iclflag {display: inline;margin-right: 8px;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-hide-on-mobile, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-mobile, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-hide-on-mobile {display: none;}}@media only screen and (min-width: 601px) {#mega-menu-wrap-primary #mega-menu-primary li.mega-hide-on-desktop, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-desktop, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-hide-on-desktop {display: none;}}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary:after {content: "";display: table;clear: both;}}#mega-menu-wrap-primary .mega-menu-toggle {display: none;z-index: 1;cursor: pointer;background: #222;-webkit-border-radius: 2px 2px 2px 2px;-moz-border-radius: 2px 2px 2px 2px;-ms-border-radius: 2px 2px 2px 2px;-o-border-radius: 2px 2px 2px 2px;border-radius: 2px 2px 2px 2px;line-height: 40px;height: 40px;text-align: left;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;-webkit-tap-highlight-color: transparent;outline: none;white-space: nowrap;}#mega-menu-wrap-primary .mega-menu-toggle img {max-width: 100%;padding: 0;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary .mega-menu-toggle {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-left, #mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-center, #mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-right {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-ms-flex-preferred-size: 33.33%;-webkit-flex-basis: 33.33%;flex-basis: 33.33%;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-left {-webkit-box-flex: 1;-ms-flex: 1;-webkit-flex: 1;flex: 1;-webkit-box-pack: start;-ms-flex-pack: start;-webkit-justify-content: flex-start;justify-content: flex-start;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-left .mega-toggle-block {margin-left: 6px;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-center {-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-center .mega-toggle-block {margin-left: 3px;margin-right: 3px;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-right {-webkit-box-flex: 1;-ms-flex: 1;-webkit-flex: 1;flex: 1;-webkit-box-pack: end;-ms-flex-pack: end;-webkit-justify-content: flex-end;justify-content: flex-end;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-blocks-right .mega-toggle-block {margin-right: 6px;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;height: 100%;outline: 0;-webkit-align-self: center;-ms-flex-item-align: center;align-self: center;-ms-flex-negative: 0;-webkit-flex-shrink: 0;flex-shrink: 0;}@media only screen and (max-width: 600px) {#mega-menu-wrap-primary .mega-menu-toggle + #mega-menu-primary {background: #222;padding: 0;display: none;}#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open + #mega-menu-primary {display: block;}}#mega-menu-wrap-primary .mega-menu-toggle {/** Push menu onto new line **/}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block-1:after {content: '\f333';font-family: 'dashicons';font-size: 24px;color: #ddd;margin: 0 0 0 5px;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-label {color: #ddd;font-size: 14px;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-label .mega-toggle-label-open {display: none;}#mega-menu-wrap-primary .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-label .mega-toggle-label-closed {display: inline;}#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open .mega-toggle-block-1:after {content: '\f153';}#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open .mega-toggle-block-1 .mega-toggle-label-open {display: inline;}#mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open .mega-toggle-block-1 .mega-toggle-label-closed {display: none;}#mega-menu-wrap-primary {clear: both;}.mega-menu-wrap {border-bottom: 5px solid #3a6d77 !important;}</style>
+<link rel="stylesheet" type="text/css" href="https://s22294.pcdn.co/wp-content/themes/hd-twentytwelve/menu.css?ver=1.1">
+<!-- DEVOPS-10353 BEGIN -->
+<meta name="google-site-verification" content="1_2IXjMdPyrj2CWd0n8Bj6cdPgjXT2OBLYfYXytOKpU" />
+<!-- DEVOPS-10353 END -->
+</head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-242820 single-format-standard custom-background mega-menu-primary full-width custom-font-enabled">
+
+<div id="site-wrapper">
+
+	<!-- Community Nav -->
+	<div class="com-toggle"><h3 class="menu-toggle toggleMenu">HOW + PRINT Community Sites</h3>
+        <div class="menu-community-nav-container"><ul id="nav-menu" class="nav"><li id="menu-item-139199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-139199"><a href="https://www.howdesign.com/">HOW</a></li>
+<li id="menu-item-139200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139200"><a href="http://www.printmag.com/">PRINT</a></li>
+<li id="menu-item-139201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139201"><a href="http://www.mydesignshop.com/">MYDESIGNSHOP</a></li>
+<li id="menu-item-139202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139202"><a href="http://www.howdesignuniversity.com/">HOW DESIGN UNIVERSITY</a></li>
+<li id="menu-item-139203" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139203"><a href="https://www.howdesign.com/design-events/">HOW DESIGN EVENTS</a></li>
+</ul></div>        </div>
+
+
+	<header id="masthead" class="site-header" role="banner">
+
+								<span id="site-title">HOW Design</span>
+				
+
+	<div class="header-image"><a href="/"><img src="https://s22294.pcdn.co/wp-content/uploads/header-logo.png" alt="" /></a></div>
+
+	<div class="header-ad" style="margin: 16px 0 0 25px; float: left;">
+<div class="howde-header-ad" style="text-align: center; margin-top: 15px; " id="howde-976048153"><div id='div-gpt-ad-1532298885082-0' style='height:122px; width:425px;top-margin:15px;'>
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-425x122', [425, 122], 'div-gpt-ad-1532298885082-0').addService(googletag.pubads());
+googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+	googletag.display('div-gpt-ad-1532298885082-0');
+});
+</script>
+</div>
+</div>     </div>
+
+
+	<div id="user-links">
+		<div class="container">
+
+		<div class="social">
+			<a href="http://www.facebook.com/HOWmagazine" target="_blank"><img src="https://s22294.pcdn.co/wp-content/uploads/social-facebook.png" alt="facebook" /></a>
+			<a href="http://twitter.com/#!/howbrand" target="_blank"><img src="https://s22294.pcdn.co/wp-content/uploads/social-twitter.png" alt="twitter" /></a>
+			<a href="http://pinterest.com/howbrand/" target="_blank"><img src="https://s22294.pcdn.co/wp-content/uploads/social-pinterest.png" alt="pinterest" /></a>
+			<a href="http://www.linkedin.com/groups?gid=4318790&trk=hb_side_g" target="_blank"><img src="https://s22294.pcdn.co/wp-content/uploads/icon-linkedin.png" alt="linked" /></a>
+			<a target="_blank" href="http://www.youtube.com/HOWmagazine"><img src="https://s22294.pcdn.co/wp-content/uploads/social-youtube.png" alt="youtube" /></a>
+			<a href="https://www.instagram.com/howbrand/" target="_blank"><img src="https://s22294.pcdn.co/wp-content/uploads/InstagramIcon-compressed.png" alt="rss" /></a>
+			<a href="https://www.google.com/producer/editions/CAowxc4p/how_design" target="_blank"><img src="https://s22294.pcdn.co/wp-content/uploads/google-currents1.png" alt="google-currents" /></a>
+		</div>
+			<div class="login">
+		 	 
+ 
+                           <div class="acct-signedout"> 
+                           <a href="https://www.howdesign.com/login/?action=register">Register</a><a style="margin: 0 0 0 15px;" href="https://www.howdesign.com/login">Log In</a>
+                           </div>                           
+                            
+			</div>	
+
+			<form method="get" id="searchform" action="https://www.howdesign.com/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search"/>
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="" />
+	</form>
+		</div>
+	</div>
+
+	</header><!-- #masthead -->
+
+<div id="page" class="hfeed site">
+	
+	<!-- Navigation -->
+	<div class="main-menu">
+	<h3 class="menu-toggle toggleMenu">Navigate</h3>
+        <div id="mega-menu-wrap-primary" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-1' id='mega-toggle-block-1' tabindex='0'><span class='mega-toggle-label' role='button' aria-expanded='false'><span class='mega-toggle-label-closed'>MENU</span><span class='mega-toggle-label-open'>MENU</span></span></div></div></div><ul id="mega-menu-primary" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="fade_up" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="200" data-mobile-force-width="false" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="600" data-unbind="true"><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-current-post-ancestor mega-current-menu-parent mega-current-post-parent mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-139210' id='mega-menu-item-139210'><a class="mega-menu-link" href="https://www.howdesign.com/design-business/design-news/" aria-haspopup="true" aria-expanded="false" tabindex="0">DESIGN NEWS<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-225855' id='mega-menu-item-225855'><a class="mega-menu-link" href="https://www.howdesign.com/how-design-live-podcast/">HOW Podcast Series</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-238318' id='mega-menu-item-238318'><a class="mega-menu-link" href="https://www.howdesign.com/web-design-resources-technology/">Design Tech & Web Design</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-46601' id='mega-menu-item-46601'><a class="mega-menu-link" href="https://www.howdesign.com/design-creativity/fonts-typography/">Typography + Fonts</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-46621' id='mega-menu-item-46621'><a class="mega-menu-link" href="https://www.howdesign.com/design-creativity/photography/">Photography</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-46611' id='mega-menu-item-46611'><a title="Web &#038; Graphic Design Illustration" class="mega-menu-link" href="https://www.howdesign.com/design-creativity/illustration-work/">Illustration</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139286' id='mega-menu-item-139286'><a title="Design Resources &#038; Online Design Education" class="mega-menu-link" href="https://www.howdesign.com/resources-education/">Design Resources</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139211' id='mega-menu-item-139211'><a class="mega-menu-link" href="https://www.howdesign.com/conference-news/graphic-design-events-exhibits/">Design Events & Exhibits</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139287' id='mega-menu-item-139287'><a class="mega-menu-link" href="https://www.howdesign.com/conference-news/">Conference News</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-13994' id='mega-menu-item-13994'><a title="Design Inspiration: Ideas for Designers" class="mega-menu-link" href="https://www.howdesign.com/design-creativity/design-inspiration/" aria-haspopup="true" aria-expanded="false" tabindex="0">INSPIRATION<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-current-post-ancestor mega-menu-item-has-children mega-menu-item-10529' id='mega-menu-item-10529'><a class="mega-menu-link" href="https://www.howdesign.com/design-creativity/" aria-haspopup="true" aria-expanded="false">Design + Creativity<span class="mega-indicator"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-46581' id='mega-menu-item-46581'><a class="mega-menu-link" href="https://www.howdesign.com/design-creativity/projects-profiles/">Design Projects</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-13987' id='mega-menu-item-13987'><a class="mega-menu-link" href="https://www.howdesign.com/design-creativity/designer-spotlight/">Designer Spotlight</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-46591' id='mega-menu-item-46591'><a title="Designing for Social Change" class="mega-menu-link" href="https://www.howdesign.com/design-creativity/design-change/">Designing Change</a></li>	</ul>
+</li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-223096' id='mega-menu-item-223096'><a class="mega-menu-link" href="https://www.howdesign.com/design-jobs/" aria-haspopup="true" aria-expanded="false" tabindex="0">CAREER<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-13962' id='mega-menu-item-13962'><a title="Graphic &#038; Web Design Career Advice" class="mega-menu-link" href="https://www.howdesign.com/design-career/">Career & Salary</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-13999' id='mega-menu-item-13999'><a class="mega-menu-link" href="https://www.howdesign.com/design-business/self-promotion/">Marketing & Self Promotion</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-14007' id='mega-menu-item-14007'><a class="mega-menu-link" href="https://www.howdesign.com/design-career/resume-portfolio/">Résumé & Portfolio</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-has-children mega-menu-item-139302' id='mega-menu-item-139302'><a title="In-House Designer Blog" class="mega-menu-link" href="https://www.howdesign.com/in-house-designer-blog/" aria-haspopup="true" aria-expanded="false">In-House Design<span class="mega-indicator"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139303' id='mega-menu-item-139303'><a class="mega-menu-link" href="https://www.howdesign.com/in-house-designer-blog/in-house-design-groups/">In-House Design Groups</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139304' id='mega-menu-item-139304'><a title="In-House Design: Careers &#038; Advice" class="mega-menu-link" href="https://www.howdesign.com/in-house-designer-blog/in-house/">In-House Issues</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139306' id='mega-menu-item-139306'><a class="mega-menu-link" href="https://www.howdesign.com/in-house-designer-blog/project-management-tools/">Project Management Tools & Software</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139305' id='mega-menu-item-139305'><a class="mega-menu-link" href="https://www.howdesign.com/in-house-designer-blog/in-house-managers/">In-House Managers</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-has-children mega-menu-item-139307' id='mega-menu-item-139307'><a title="Creative Freelancer Blog: Design, Writing, Photography &#038; Business Tips" class="mega-menu-link" href="https://www.howdesign.com/creative-freelancer-blog/" aria-haspopup="true" aria-expanded="false">Freelance Design<span class="mega-indicator"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139309' id='mega-menu-item-139309'><a class="mega-menu-link" href="https://www.howdesign.com/creative-freelancer-blog/getting-started-in-freelance-design/">Getting Started in Freelance Design</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139308' id='mega-menu-item-139308'><a title="Freelance Design Work &#038; How to Freelance" class="mega-menu-link" href="https://www.howdesign.com/creative-freelancer-blog/freelancing/">Growing Your Freelance Business</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139310' id='mega-menu-item-139310'><a class="mega-menu-link" href="https://www.howdesign.com/creative-freelancer-blog/pricing-your-freelance-work/">Pricing Your Freelance Work</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139311' id='mega-menu-item-139311'><a class="mega-menu-link" href="https://www.howdesign.com/creative-freelancer-blog/design-entrepreneurs/">Be a Design Entrepreneur: How to Start a Graphic Design Business</a></li>	</ul>
+</li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-139289' id='mega-menu-item-139289'><a class="mega-menu-link" href="https://www.howdesign.com/design-firm/" aria-haspopup="true" aria-expanded="false" tabindex="0">BUSINESS<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-46631' id='mega-menu-item-46631'><a class="mega-menu-link" href="https://www.howdesign.com/design-firm/design-firm-owners/">Design Firm Owners</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139290' id='mega-menu-item-139290'><a class="mega-menu-link" href="https://www.howdesign.com/design-firm/design-firms-to-watch/">Firms To Watch</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139291' id='mega-menu-item-139291'><a title="Design Business Clients: Communication &#038; Management" class="mega-menu-link" href="https://www.howdesign.com/design-business/clients/">Client Relations</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-current-post-ancestor mega-menu-item-139292' id='mega-menu-item-139292'><a title="Design Business &#038; The Industry of Design" class="mega-menu-link" href="https://www.howdesign.com/design-business/">Business Essentials</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139293' id='mega-menu-item-139293'><a title="Creative Workspaces: An Inside Look at Unique Design Studios" class="mega-menu-link" href="https://www.howdesign.com/design-creativity/creative-workspaces/">Creative Workspaces</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-139294' id='mega-menu-item-139294'><a title="HOW Interactive: Web Design &#038; Interactive Web Design Tips" class="mega-menu-link" href="https://www.howdesign.com/web-design-resources-technology/" aria-haspopup="true" aria-expanded="false" tabindex="0">TECH & WEB<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139295' id='mega-menu-item-139295'><a class="mega-menu-link" href="https://www.howdesign.com/web-design-resources-technology/interactive-design-firms/">Interactive Design Firms</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139296' id='mega-menu-item-139296'><a title="Best Design Websites &#038; Great Sites for Designers" class="mega-menu-link" href="https://www.howdesign.com/design-creativity/top-10-sites-for-designers/">Top 10 Websites for Designers</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139297' id='mega-menu-item-139297'><a class="mega-menu-link" href="https://www.howdesign.com/web-design-resources-technology/interactive-tools-and-software/">Interactive Tools & Software</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139298' id='mega-menu-item-139298'><a class="mega-menu-link" href="https://www.howdesign.com/web-design-resources-technology/mobile-app-and-tablet-design/">Mobile, App & Tablet Design</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139299' id='mega-menu-item-139299'><a class="mega-menu-link" href="https://www.howdesign.com/web-design-resources-technology/ux-and-ui-design/">UX and UI Design</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139301' id='mega-menu-item-139301'><a class="mega-menu-link" href="https://www.howdesign.com/web-design-resources-technology/website-and-responsive-design/">Website & Responsive Design</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-16426' id='mega-menu-item-16426'><a title="Online Graphic &#038; Web Design Courses &#038; Classes" class="mega-menu-link" href="http://www.howdesignuniversity.com" aria-haspopup="true" aria-expanded="false" tabindex="0">ONLINE LEARNING<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-238897' id='mega-menu-item-238897'><a class="mega-menu-link" href="https://www.howdesign.com/resources-education/">Design Tutorials & How-Tos</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-121841' id='mega-menu-item-121841'><a title="Online Graphic &#038; Web Design Courses &#038; Classes" class="mega-menu-link" href="http://www.howdesignuniversity.com">Online Courses</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-96871' id='mega-menu-item-96871'><a title="Design Workshops for Graphic &#038; Web Design" class="mega-menu-link" href="https://www.howdesign.com/design-workshops/">Design Workshops</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-211275' id='mega-menu-item-211275'><a class="mega-menu-link" href="/how-design-live-podcast">HOW Design Live Podcasts</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-121842' id='mega-menu-item-121842'><a title="Design TV: Design Tutorials On Demand" class="mega-menu-link" href="http://howdesignuniversity.com">Design Videos</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-96881' id='mega-menu-item-96881'><a title="Mark Your Calendar: Design Conferences" class="mega-menu-link" href="https://www.howdesign.com/design-events/" aria-haspopup="true" aria-expanded="false" tabindex="0">EVENTS<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-menu-item-96911' id='mega-menu-item-96911'><a target="_blank" class="mega-menu-link" href="http://www.howdesignlive.com#new_tab" aria-haspopup="true" aria-expanded="false">HOW Design Live<span class="mega-indicator"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-96961' id='mega-menu-item-96961'><a title="Dieline Package Design Conference" target="_blank" class="mega-menu-link" href="http://thepackagedesignconference.com#new_tab">The Dieline Packaging</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-128647' id='mega-menu-item-128647'><a title="HOW Design Live Podcast with Ilise Benun" class="mega-menu-link" href="https://www.howdesign.com/how-design-live-podcast-series/">HOW Podcast Series</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-96901' id='mega-menu-item-96901'><a title="HOW Design Events: Call for Speakers" class="mega-menu-link" href="https://www.howdesign.com/design-events/call-for-speakers/">Call for Speakers</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-97071' id='mega-menu-item-97071'><a title="Designer &#038; Design Sweepstakes" class="mega-menu-link" href="https://www.howdesign.com/sweepstakes/">Sweepstakes</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-96971' id='mega-menu-item-96971'><a title="Design Competitions &#038; Designer Contests" class="mega-menu-link" href="https://www.howdesign.com/design-competitions-contests/" aria-haspopup="true" aria-expanded="false" tabindex="0">COMPETITIONS<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-97001' id='mega-menu-item-97001'><a title="In-House Design Awards &#038; Competition" class="mega-menu-link" href="https://www.howdesign.com/design-competitions-contests/in-house-design-awards/">In House Design</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-97081' id='mega-menu-item-97081'><a title="Promotion Design Competition &#038; Awards" class="mega-menu-link" href="https://www.howdesign.com/design-competitions-contests/promotion-design-awards/">Promotion Design</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-97051' id='mega-menu-item-97051'><a title="International Design Awards &#038; Competition" class="mega-menu-link" href="https://www.howdesign.com/design-competitions-contests/international-design-awards/">International Design</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-96991' id='mega-menu-item-96991'><a title="HOW Logo Design Competition &#038; Awards" class="mega-menu-link" href="https://www.howdesign.com/design-competitions-contests/logo-design-competition/">Logo Design</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-97061' id='mega-menu-item-97061'><a title="Design Awards &#038; Contest Winners" class="mega-menu-link" href="https://www.howdesign.com/design-competitions-contests/design-award-galleries/">Galleries</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-14013' id='mega-menu-item-14013'><a title="Free Design Downloads" class="mega-menu-link" href="https://www.howdesign.com/free/" aria-haspopup="true" aria-expanded="false" tabindex="0">FREE<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-97141' id='mega-menu-item-97141'><a title="HOW Magazine Design Newsletter" class="mega-menu-link" href="https://www.howdesign.com/newsletter/">HOW Newsletter</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-225854' id='mega-menu-item-225854'><a title="Free Design Downloads" class="mega-menu-link" href="https://www.howdesign.com/free/">Free Downloads</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-139313' id='mega-menu-item-139313'><a title="Graphic Design Directory" class="mega-menu-link" href="https://www.howdesign.com/design-directory/">Design Directory</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-139314' id='mega-menu-item-139314'><a title="Design Jobs &#038; Careers for Designers" class="mega-menu-link" href="https://www.howdesign.com/design-jobs/" aria-haspopup="true" aria-expanded="false" tabindex="0">JOBS<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-139315' id='mega-menu-item-139315'><a target="_blank" class="mega-menu-link" href="https://partnerjobs.coroflot.com/post-a-job-form?origin_id=12#new_tab">Hire Top Designers</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-139316' id='mega-menu-item-139316'><a class="mega-menu-link" href="https://www.howdesign.com/design-career/job-search-tips/">Design Job Search Tips</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-align-bottom-left mega-menu-flyout mega-menu-item-97091' id='mega-menu-item-97091'><a class="mega-menu-link" href="https://www.howdesign.com/all-digital/" tabindex="0">MAGAZINE</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-97101' id='mega-menu-item-97101'><a target="_blank" class="mega-menu-link" href="http://www.mydesignshop.com?lid=HOWNAVSHOP#new_tab" aria-haspopup="true" aria-expanded="false" tabindex="0">SHOP<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-97151' id='mega-menu-item-97151'><a target="_blank" class="mega-menu-link" href="http://www.mydesignshop.com?lid=HOWNAVSHOP#new_tab">MyDesignShop</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-116491' id='mega-menu-item-116491'><a class="mega-menu-link" href="http://www.mydesignshop.com/gifts-for-designers?lid=hownav">Gifts for Designers</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-97221' id='mega-menu-item-97221'><a class="mega-menu-link" href="http://www.howdesignuniversity.com">Online Courses</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-97161' id='mega-menu-item-97161'><a title="HOW Books: Exclusive Excerpts &#038; Design Book Reviews" class="mega-menu-link" href="https://www.howdesign.com/design-books/">HOW Books</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-97181' id='mega-menu-item-97181'><a class="mega-menu-link" href="http://tv.howdesign.com">Design Videos</a></li></ul>
+</li></ul></div>        </div>
+
+		<div id="Offer"><aside id="text-14" class="widget widget_text">			<div class="textwidget"><div class="left">
+<img src="https://s22294.pcdn.co/wp-content/uploads/designing-wonder.png" alt="" />
+</div>
+<p><!-- left --></p>
+<div class="right">
+Discover how designers play with dimension and space to create mindbending optical illusions that leap off the page—and wall, and screen. Enter your email to download this article from HOW magazine.</div>
+<p><!-- right --></p></div>
+		</aside>            <div id="et_form-div-quicksubscribe-119283" class="et-quick-subscribe et-form">
+                <form id="form-quicksubscribe-119283"
+                      name="form-quicksubscribe-119283" class="et_form"
+                      action="/wp-content/plugins/fw-exacttarget-client/subscribe-form.php" method="POST"
+                      onsubmit="return ET_LongFormSubmit('quicksubscribe-119283');">
+                    <fieldset class="et_fieldset">
+                        <input id="ETSubscriberKeyThxquicksubscribe-119283" name="ETSubscriberKey" type="hidden" /><input name="SubAction" type="hidden" value="sub_add_update" /><input name="formId" type="hidden" value="quicksubscribe-119283" /><ul style="list-style-type:none; margin:0; padding:0;" class="et_field_list"><input type="hidden" name="et2_list[1303284][]" value="HOW Design Newsletter" /><input type="hidden" name="et2_list[1303284][]" value="HOW Design University" /><input type="hidden" name="et2_list[1303284][]" value="Design Competitions" /><input type="hidden" name="et2_list[1303284][]" value="Design Conferences" /><input type="hidden" name="et2_list[1303284][]" value="My Design Shop" /><input type="hidden" name="et2_list[1303284][]" value="Design Community Partners" /><input type="hidden" name="et2_list[1303284][]" value="Subscription and Membership Offers" /><input type="hidden" name="et2_list[1303284][]" value="HOW + Print Week in Review" /><input type="hidden" name="et2_list[1303284][]" value="Design Resubscribe" /><li><label for="EmailAddressThx"><span class='required'>*</span> </label><input type="text" autocomplete="off" id="EmailAddressThxquicksubscribe-119283" class="et_text" name="et_emailAddress" value="Enter Email" placeholder="Enter Email" onfocus="etEmailFocus('Enter Email',this)" onblur="if (this.value == '') {this.value = 'Enter Email';}" /></li><input type="hidden" name="et2_customField[1303284][Quick Subscribe HOW]" value="True" class="" /></ul><input type="hidden" id="thx242820" name="thx" value="https://www.howdesign.com/newsletter-thanks/"  /><input type="hidden" id="err242820" name="err" value="https://www.howdesign.com/newsletter-error/"  /><input type="hidden" name="et_emailSource" value="Main Content Site" /><input class='submit' name='submitSubscription' id='submit-quicksubscribe-119283' type='submit' value='Submit' /><div class="g-recaptcha" data-sitekey="6LdIPSgTAAAAAGpQjIWNbHGICiydKvoqrRYY1VAA"></div>                    </fieldset>
+                    <input type="hidden" name="action" id="quicksubscribe-119283"
+                           value="submitSubscription"/>
+                    <input type="hidden" name="et_mid[]" value="1303284" />                </form>
+            </div>
+         </div>
+		
+	<div id="subscribe-shadow"><img src="https://s22294.pcdn.co/wp-content/uploads/quick-subscribe-shadow.png" alt="" /></div>
+
+
+<div id="main" class="wrapper">
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			
+				
+
+<article id="post-242820" class="post-242820 post type-post status-publish format-standard has-post-thumbnail hentry category-how-to category-design-news category-editors-picks category-graphic-design-basics category-how-design-blog tag-how-logo-design-awards tag-logo-design tag-logo-design-ideas tag-logo-design-inspiration tag-logolounge">
+	<header class="entry-header">
+		<h1 class="entry-title">5 Tried and True Design Devices for Logo Designers</h1>
+
+
+		
+		<div class="entry-meta">
+
+<!-- Grab the author and the date of post -->
+
+ 
+
+By: <span class="by-author"><span class="author vcard"><a class="url fn n" href="https://www.howdesign.com/author/emilypotts/" title="View all posts by Emily Potts" rel="author">Emily Potts</a></span></span> | <time class="entry-date" datetime="2018-10-18T00:04:25-04:00">October 18, 2018</time>
+
+<div class="sharethis">
+<span class='st_facebook' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_twitter' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_linkedin' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_email' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_sharethis' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_plusone' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_pinterest' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span>
+</div><!-- sharethis -->
+
+
+		</div><!-- .entry-meta -->
+
+		
+	
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p style="text-align: center;"><a href="https://www.howdesign.com/design-competitions/logo-design-awards/"><img class="aligncenter size-large wp-image-247731" src="https://s22294.pcdn.co/wp-content/uploads/20850-HOWLogoDesignAwards2018-Logos-700x174-1-600x149.jpg" alt="" width="600" height="149" srcset="https://s22294.pcdn.co/wp-content/uploads/20850-HOWLogoDesignAwards2018-Logos-700x174-1-600x149.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/20850-HOWLogoDesignAwards2018-Logos-700x174-1-400x99.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/20850-HOWLogoDesignAwards2018-Logos-700x174-1.jpg 700w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<hr>
+<h1>5 Tried and True Design Devices for Logo Designers</h1>
+<p>Thanks to Bill Gardner and LogoLounge and judges Aaron Draplin (Draplin Design Co.), Von Glitschka (Glitschka Studios) Su Mathews Hale (Lippincott), Andreas Karl&nbsp; (Karl Design) Chad Michael (Chad Michael Studio), Emily Oberman (Pentagram), Yo Santosa (Ferroconcrete) Felix Sockwell, Alex Tass, and Alex Trochut for all their insights and opinions into the&nbsp;logo design trends and insights that tried-and-true as well as impacting design in a fresh way right now.</p>
+<h2 class="p1"><span class="s1"><b>Crests</b></span></h2>
+<p class="p2"><span class="s1">When applied appropriately, crests can convey a sense of tradition, whether the brand has a rich history or not, and they blend a variety of design elements to create a cohesive look. “I like them because they are complex but still simple to read and take in,” Glitschka says. “A handful of these were in my top-rated logos.” </span></p>
+<p class="p3"><span class="s1">Draplin adds, “I loved the ‘pack a bunch of stuff in’ crests I saw. But of course, those work best when you can read all the stuff, say, on a T-shirt. I just dug the detail, line consistency and overall spirit of how people packed in a ton of info to such beautiful lock-ups. That’s how we used to do it on the top of a barrel carrying—I don’t know—hard tack or some shit.”</span></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/232_288924.jpg"><img class="alignnone size-full wp-image-242824" src="https://s22294.pcdn.co/wp-content/uploads/232_288924.jpg" alt="logo design ideas; crests" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/232_288924.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/232_288924-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/232_288924-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/232_288924-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/232_288924-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/232_288924-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Copper &amp; Brave by <a href="http://braue.info/relaunch/" target="_blank" rel="noopener">Braue: Brand Design Experts&nbsp;</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/15075_274530.jpg"><img class="alignnone size-full wp-image-242831" src="https://s22294.pcdn.co/wp-content/uploads/15075_274530.jpg" alt="logo design ideas; crests" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/15075_274530.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/15075_274530-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/15075_274530-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/15075_274530-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/15075_274530-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/15075_274530-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Printed Threads by <a href="http://paulsirmon.com/" target="_blank" rel="noopener">Paul Sirmon LLC</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/10784_283697.jpg"><img class="alignnone size-full wp-image-242830" src="https://s22294.pcdn.co/wp-content/uploads/10784_283697.jpg" alt="logo design ideas; crests" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/10784_283697.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/10784_283697-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/10784_283697-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/10784_283697-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/10784_283697-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/10784_283697-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Elevation Beer Co. by <a href="http://www.sundaylounge.com/" target="_blank" rel="noopener">Sunday Lounge</a></p>
+<h2 class="p1"><span class="s1"><b>Geometric Devices</b></span></h2>
+<p class="p2"><span class="s1">“I have noticed the use of basic geometric elements—circles, squares, either on their own or involved in constructions where symmetry and logic were involved,” Tass explains. “It is definitely a classic direction, but one that never gets old.”</span></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/5_282571.jpg"><img class="alignnone size-full wp-image-242823" src="https://s22294.pcdn.co/wp-content/uploads/5_282571.jpg" alt="logo design ideas; geometric devices" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/5_282571.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/5_282571-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/5_282571-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/5_282571-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/5_282571-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/5_282571-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Steeple Bay by <a href="http://gardnerdesign.com/" target="_blank" rel="noopener">Gardner Design</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/16421_275640.jpg"><img class="alignnone size-full wp-image-242832" src="https://s22294.pcdn.co/wp-content/uploads/16421_275640.jpg" alt="logo design ideas; geometric devices" width="800" height="799" srcset="https://s22294.pcdn.co/wp-content/uploads/16421_275640.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/16421_275640-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/16421_275640-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/16421_275640-768x767.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/16421_275640-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/16421_275640-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Tsukat by <a href="http://brandforma.com/" target="_blank" rel="noopener">Brandforma</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/20288_292432_720.jpg"><img class="alignnone size-full wp-image-242835" src="https://s22294.pcdn.co/wp-content/uploads/20288_292432_720.jpg" alt="logo design ideas; geometric devices" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/20288_292432_720.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/20288_292432_720-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/20288_292432_720-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/20288_292432_720-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/20288_292432_720-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/20288_292432_720-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Stacks by <a href="http://gregthomas.design/" target="_blank" rel="noopener">Greg Thomas</a></p>
+<h2 class="p1"><span class="s1"><b>Monoline</b></span></h2>
+<p class="p2">“The unified weight look has really caught fire over the past decade, where an image or typography is designed with a single stroke weight,” Michael observes. “I enjoy this approach, but it is difficult to master beautifully.”</p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/20391_281810.jpg"><img class="alignnone size-full wp-image-242836" src="https://s22294.pcdn.co/wp-content/uploads/20391_281810.jpg" alt="logo design ideas; monoline" width="800" height="799" srcset="https://s22294.pcdn.co/wp-content/uploads/20391_281810.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/20391_281810-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/20391_281810-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/20391_281810-768x767.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/20391_281810-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/20391_281810-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Outbound Coalition by Brokenstraw Art &amp; Design</p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/20262_289147.jpg"><img class="alignnone size-full wp-image-242834" src="https://s22294.pcdn.co/wp-content/uploads/20262_289147.jpg" alt="logo design ideas; monoline" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/20262_289147.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/20262_289147-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/20262_289147-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/20262_289147-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/20262_289147-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/20262_289147-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Fluent by <a href="http://tractorbeam.com/" target="_blank" rel="noopener">Tractorbeam</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/3175_292804.jpg"><img class="alignnone size-full wp-image-242826" src="https://s22294.pcdn.co/wp-content/uploads/3175_292804.jpg" alt="logo design ideas; monoline" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/3175_292804.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/3175_292804-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/3175_292804-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/3175_292804-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/3175_292804-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/3175_292804-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Magnus Alpha by <a href="http://mauriciocremer.com/" target="_blank" rel="noopener">Mauricio Cremer</a></p>
+<p style="text-align: center;">[<a href="https://www.howdesign.com/design-business/design-thinking/6-things-to-avoid-when-designing-a-logo/" target="_blank" rel="noopener">Discover&nbsp;6 things to avoid when designing a logo</a>]</p>
+<h2 class="p1"><span class="s1"><b>Handcrafted Logotypes</b></span></h2>
+<p class="p2"><span class="s1">With so many breweries and coffee shops popping up everywhere, it’s no surprise that hand-lettered, artisan logos are still relevant. People crave the details over the monotony. Sockwell thinks it’s simpler than that. “There’s a lot of digital stuff that looks impersonal, and this goes directly against that.” </span></p>
+<p class="p3"><span class="s1">In the same vein, seals and type on a curved baseline were prevalent. As Santosa notes, “They are classic devices, but I’m guessing it’s really popular because it gives a crafty/artisan feel.”</span></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/6071_286706.jpg"><img class="alignnone size-full wp-image-242827" src="https://s22294.pcdn.co/wp-content/uploads/6071_286706.jpg" alt="logo design ideas; handcrafted logotypes" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/6071_286706.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/6071_286706-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/6071_286706-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/6071_286706-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/6071_286706-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/6071_286706-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Green5 by <a href="https://www.behance.net/logoped" target="_blank" rel="noopener">Denis Ulyanov</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/8868_286859.jpg"><img class="alignnone size-full wp-image-242828" src="https://s22294.pcdn.co/wp-content/uploads/8868_286859.jpg" alt="logo design ideas; handcrafted logotypes" width="800" height="833" srcset="https://s22294.pcdn.co/wp-content/uploads/8868_286859.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/8868_286859-384x400.jpg 384w, https://s22294.pcdn.co/wp-content/uploads/8868_286859-768x800.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/8868_286859-576x600.jpg 576w" sizes="(max-width: 800px) 100vw, 800px" /></a>Madison Homebrewers and Tasters Guild by <a href="http://www.chapadesign.com/" target="_blank" rel="noopener">Chapa Design</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/10784_271113.jpg"><img class="alignnone size-full wp-image-242829" src="https://s22294.pcdn.co/wp-content/uploads/10784_271113.jpg" alt="logo design ideas; handcrafted logotypes" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/10784_271113.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/10784_271113-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/10784_271113-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/10784_271113-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/10784_271113-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/10784_271113-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Wild Theory Brewing Co. by <a href="http://www.sundaylounge.com/" target="_blank" rel="noopener">Sunday Lounge</a></p>
+<h2 class="p1"><span class="s1"><b>Highlighted Silhouettes</b></span></h2>
+<p class="p2"><span class="s1">“The highlighted silhouette look has been around for over 100 years, so I found it comforting to know designers are still employing this and successfully so,” says Michael. “Of course, as with any style, it is all about execution and avoiding regurgitating a form we’ve all seen a hundred times. The highlighted silhouette is here to stay.”</span></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/1436_274798.jpg"><img class="alignnone size-full wp-image-242825" src="https://s22294.pcdn.co/wp-content/uploads/1436_274798.jpg" alt="logo design ideas; highlighted silhouettes" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/1436_274798.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/1436_274798-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/1436_274798-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/1436_274798-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/1436_274798-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/1436_274798-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Keg Creek Brewing by <a href="https://oxidedesign.com/" target="_blank" rel="noopener">Oxide Design Co.</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/19734_271184.jpg"><img class="alignnone size-full wp-image-242833" src="https://s22294.pcdn.co/wp-content/uploads/19734_271184.jpg" alt="logo design ideas; highlighted silhouettes" width="800" height="800" srcset="https://s22294.pcdn.co/wp-content/uploads/19734_271184.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/19734_271184-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/19734_271184-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/19734_271184-768x768.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/19734_271184-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/19734_271184-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Highbrow by <a href="http://spin.co.uk/" target="_blank" rel="noopener">Spin Design</a></p>
+<p><a href="https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59.jpg"><img class="alignnone size-full wp-image-242840" src="https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59.jpg" alt="logo design ideas; highlighted silhouettes" width="800" height="798" srcset="https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59.jpg 800w, https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59-150x150.jpg 150w, https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59-400x400.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59-768x766.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59-600x600.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/Screen-Shot-2017-11-15-at-2.59-113x113.jpg 113w" sizes="(max-width: 800px) 100vw, 800px" /></a>Khi-Khi Milk Co. by <a href="http://www.jfletcherdesign.com/" target="_blank" rel="noopener">J Fletcher Design</a></p>
+<hr>
+<p style="text-align: center;">[<a href="https://www.howdesignuniversity.com/courses/introduction-to-logo-design?utm_source=howdesignuniversity.com&amp;utm_medium=referral&amp;utm_campaign=hw-aaa-bl-171118" target="_blank" rel="noopener noreferrer">Online Course: Logo Design Basics</a>]</p>
+		<div class="sharethis">
+<span class='st_facebook' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_twitter' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_linkedin' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_email' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_sharethis' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_plusone' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span><span class='st_pinterest' data-st_title='5 Tried and True Design Devices for Logo Designers' data-st_url='https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/'></span>
+</div><!-- sharethis -->
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+
+
+<!-- Get the Categories -->
+CATEGORIES<br /> <a href="https://www.howdesign.com/design-creativity/how-to/" rel="category tag">Design Inspiration: Ideas &amp; How-to Advice for Designers</a>, <a href="https://www.howdesign.com/design-business/design-news/" rel="category tag">Design News</a>, <a href="https://www.howdesign.com/editors-picks/" rel="category tag">Editor's Picks</a>, <a href="https://www.howdesign.com/graphic-design-basics/" rel="category tag">Graphic Design Basics</a>, <a href="https://www.howdesign.com/how-design-blog/" rel="category tag">HOW Blog</a>
+<!-- Get the tags -->
+<div class="tag-meta"><p>TAGS<br /> <a href="https://www.howdesign.com/tag/how-logo-design-awards/" rel="tag">HOW logo design awards</a>, <a href="https://www.howdesign.com/tag/logo-design/" rel="tag">Logo Design</a>, <a href="https://www.howdesign.com/tag/logo-design-ideas/" rel="tag">logo design ideas</a>, <a href="https://www.howdesign.com/tag/logo-design-inspiration/" rel="tag">logo design inspiration</a>, <a href="https://www.howdesign.com/tag/logolounge/" rel="tag">LogoLounge</a></p></div>
+<!-- Related Posts -->
+<div class="tag-meta">RELATED POSTS<br /><a href="https://www.howdesign.com/design-creativity/behind-the-design/dream-house-award-winning-design-activism-branding/" rel="bookmark" title="Permanent Link to Yellow House&#8217;s Simple, Flexible, Resonant New Logo">Yellow House&#8217;s Simple, Flexible, Resonant New Logo</a><br /><a href="https://www.howdesign.com/featured/cast-your-vote-the-9th-annual-how-logo-design-awards/" rel="bookmark" title="Permanent Link to Cast Your Vote: The 9th Annual HOW Logo Design Awards">Cast Your Vote: The 9th Annual HOW Logo Design Awards</a><br /><a href="https://www.howdesign.com/design-creativity/the-best-work/pentagram-natasha-jen-brand-identity-systems/" rel="bookmark" title="Permanent Link to Pentagram’s Natasha Jen on All Things Branding">Pentagram’s Natasha Jen on All Things Branding</a><br /><a href="https://www.howdesign.com/in-house-designer-blog/in-house/3-new-opportunities-will-make-want-enter-how-design-awards/" rel="bookmark" title="Permanent Link to 3 Exciting New Opportunities for Award-Winning Designers">3 Exciting New Opportunities for Award-Winning Designers</a><br /><a href="https://www.howdesign.com/design-creativity/the-best-work/chad-michael-logos-and-custom-lettering/" rel="bookmark" title="Permanent Link to Designing History: A Closer Look at Chad Michael&#8217;s Logos">Designing History: A Closer Look at Chad Michael&#8217;s Logos</a><br /></div>
+
+	
+
+		
+
+	</footer><!-- .entry-meta -->
+</article><!-- #post-242820 -->
+				
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			4 thoughts on &ldquo;<span>5 Tried and True Design Devices for Logo Designers</span>&rdquo;		</h2>
+
+		<ol class="commentlist">
+				<li class="comment byuser comment-author-chrscdesign88 even thread-even depth-1" id="li-comment-277691">
+		<article id="comment-277691" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt='' src='https://secure.gravatar.com/avatar/88e5bbb2728ff9688cf3de9628fe99cb?s=44&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/88e5bbb2728ff9688cf3de9628fe99cb?s=88&#038;d=blank&#038;r=g 2x' class='avatar avatar-44 photo' height='44' width='44' /><cite class="fn"><a href='http://www.freelancegraphicdesign.org' rel='external nofollow' class='url'>chrscdesign88</a> </cite><a href="https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#comment-277691"><time datetime="2017-11-25T18:14:46-04:00">November 25, 2017 at 6:14 pm</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Hi Emily great article! I have seen crests used a lot in Victorian style art and I agree that applying these to a modern logo design is a great idea.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-login" href="https://www.howdesign.com/login/?redirect_to=https%3A%2F%2Fwww.howdesign.com%2Fgraphic-design-basics%2F5-tried-and-true-design-devices-logo-design-ideas%2F">Log in to Reply</a> <span>&darr;</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-vincent007 odd alt thread-odd thread-alt depth-1" id="li-comment-285725">
+		<article id="comment-285725" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt='' src='https://secure.gravatar.com/avatar/1c9556ec7871fc5ffe6175eb5f86f23d?s=44&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/1c9556ec7871fc5ffe6175eb5f86f23d?s=88&#038;d=blank&#038;r=g 2x' class='avatar avatar-44 photo' height='44' width='44' /><cite class="fn"><a href='https://www.overnightgraphics.com/' rel='external nofollow' class='url'>vincent007</a> </cite><a href="https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#comment-285725"><time datetime="2018-10-23T01:55:57-04:00">October 23, 2018 at 1:55 am</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>These designs are really nice for put it on the t-shirts. And all designs are very unique but i like over here is   Madison Homebrewers and Tasters Guild and Fluent. Very intelligent work.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-login" href="https://www.howdesign.com/login/?redirect_to=https%3A%2F%2Fwww.howdesign.com%2Fgraphic-design-basics%2F5-tried-and-true-design-devices-logo-design-ideas%2F">Log in to Reply</a> <span>&darr;</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-moon-gold even thread-even depth-1" id="li-comment-287614">
+		<article id="comment-287614" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt='' src='https://secure.gravatar.com/avatar/7d663809baeb72979a046ab468834b1f?s=44&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/7d663809baeb72979a046ab468834b1f?s=88&#038;d=blank&#038;r=g 2x' class='avatar avatar-44 photo' height='44' width='44' /><cite class="fn"><a href='http://www.moongold.com' rel='external nofollow' class='url'>Moon Gold</a> </cite><a href="https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#comment-287614"><time datetime="2018-11-20T22:19:24-04:00">November 20, 2018 at 10:19 pm</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Logo design needs to consider the small size format as well.<br />
+Some logos are way too complicated to be a smaller size.<br />
+But, I love all of the designs. Thanks for sharing.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-login" href="https://www.howdesign.com/login/?redirect_to=https%3A%2F%2Fwww.howdesign.com%2Fgraphic-design-basics%2F5-tried-and-true-design-devices-logo-design-ideas%2F">Log in to Reply</a> <span>&darr;</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-graphicsdigitizing odd alt thread-odd thread-alt depth-1" id="li-comment-287858">
+		<article id="comment-287858" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt='' src='https://secure.gravatar.com/avatar/1068f68d3376fbf89253d515cce1508e?s=44&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/1068f68d3376fbf89253d515cce1508e?s=88&#038;d=blank&#038;r=g 2x' class='avatar avatar-44 photo' height='44' width='44' /><cite class="fn"><a href='https://www.graphicsdigitizing.com/' rel='external nofollow' class='url'>graphicsdigitizing</a> </cite><a href="https://www.howdesign.com/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#comment-287858"><time datetime="2019-04-17T02:42:56-04:00">April 17, 2019 at 2:42 am</time></a>			</header><!-- .comment-meta -->
+
+			
+			<section class="comment-content comment">
+				<p>Thank you for this information.</p>
+							</section><!-- .comment-content -->
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-login" href="https://www.howdesign.com/login/?redirect_to=https%3A%2F%2Fwww.howdesign.com%2Fgraphic-design-basics%2F5-tried-and-true-design-devices-logo-design-ideas%2F">Log in to Reply</a> <span>&darr;</span>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+	</li><!-- #comment-## -->
+		</ol><!-- .commentlist -->
+
+		
+		
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">COMMENT <small><a rel="nofollow" id="cancel-comment-reply-link" href="/graphic-design-basics/5-tried-and-true-design-devices-logo-design-ideas/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="https://www.howdesign.com/login/?redirect_to=https%3A%2F%2Fwww.howdesign.com%2Fgraphic-design-basics%2F5-tried-and-true-design-devices-logo-design-ideas%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+	
+</div><!-- #comments .comments-area -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<div id="sidebar">
+		<div id="secondary" class="" role="complementary">
+            
+			<div class="content-block">
+			<aside class="widget howde-widget"><div id='div-gpt-ad-1532298486627-0' style='height:250px; width:300px;'>
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-300x250-1', [300, 250], 'div-gpt-ad-1532298486627-0').addService(googletag.pubads());
+	googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+	googletag.display('div-gpt-ad-1532298486627-0');
+});
+</script>
+</div></aside> 
+			</div>
+
+			<div class="content-block">
+			<aside id="text-10" class="widget widget_text">			<div class="textwidget"><h3 class="widget-title"><a href="https://www.howdesign.com/conference-news">HOW Events</a></h3></div>
+		</aside><aside id="dpe_fp_widget-11" class="widget widget_dpe_fp_widget">	<ul class="dpe-flexible-posts">
+
+			
+		
+		<li id="post-249619" class="post-249619 post type-post status-publish format-standard has-post-thumbnail hentry category-featured-how-design-live category-how-design-live tag-how-design-live tag-how-design-live-2019">
+			<a href="https://www.howdesign.com/conference-news/how-design-live/how-design-live-2019-recap/">
+				
+
+				<div class="dpe-large-image">
+				<img width="400" height="250" src="https://s22294.pcdn.co/wp-content/uploads/3263_PWP_HOW19-400x250.jpg" class="attachment-medium size-medium wp-post-image" alt="" srcset="https://s22294.pcdn.co/wp-content/uploads/3263_PWP_HOW19-400x250.jpg 400w, https://s22294.pcdn.co/wp-content/uploads/3263_PWP_HOW19-768x479.jpg 768w, https://s22294.pcdn.co/wp-content/uploads/3263_PWP_HOW19-600x375.jpg 600w, https://s22294.pcdn.co/wp-content/uploads/3263_PWP_HOW19.jpg 1251w" sizes="(max-width: 400px) 100vw, 400px" />				<h4 class="title">HOW Design Live 2019: The Recap</h4>
+				</div>
+			</a>
+
+			
+
+		</li>
+		
+
+	
+	</ul><!-- .dpe-flexible-posts -->
+
+
+</aside><aside id="text-11" class="widget widget_text">			<div class="textwidget"><div class="more-link">
+
+<a href="https://www.howdesign.com/conference-news/">More HOW Events News</a>
+
+</div></div>
+		</aside> 
+			</div>
+
+			<div class="content-block">
+			<aside class="widget howde-widget"><div id='div-gpt-ad-1532298537928-0' style='height:250px; width:300px;'>
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-300x250-2', [300, 250], 'div-gpt-ad-1532298537928-0').addService(googletag.pubads());
+	googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+googletag.display('div-gpt-ad-1532298537928-0');
+});
+</script>
+</div></aside> 
+			</div>
+
+			<div class="content-block">
+			<aside id="text-4" class="widget widget_text"><h3 class="widget-title">New from MyDesignShop</h3>			<div class="textwidget"><div class="magento-product"> <ul class="magento-items-grid">
+			<li class="magento-item">
+				<div class="magento-item-data">
+						<a href="Array?utm_source=&utm_medium=&utm_campaign=" target="_blank"><img src="https://cdn.fwmedia.net/media/catalog/product/m/d/mds_mastersofdesign-500.jpg" alt="" /></a>
+					<span class="magento-price-box">
+							<span class="magento-price sale">$0.00</span>
+					</span>
+					<div class="buynow-box">
+					  <span class="buynow-magento-product"><a href="Array?utm_source=&utm_medium=&utm_campaign=" target="_blank">Buy Now!</a></span>
+					</div>
+				</div>
+				<div>
+				  <h2><a href="Array?utm_source=&utm_medium=&utm_campaign=" target="_blank">Masters of Design</a></h2>
+				  <p>5 video presentations for one great price – a MyDesignShop exclusive!</p>
+				</div>
+			</li>
+				</ul>
+			</div>
+			<style>
+			.magento-items-grid {
+				margin:0;
+				padding:0;
+				clear: both;
+			}
+			.magento-items-grid li{
+				list-style:none;
+				clear: both;
+			}
+			.magento-price-box {
+				display: block;
+			}
+			.magento-item {
+				text-align: center;
+			}
+			.magento-price.strikethrough{
+					text-decoration: line-through;
+			}
+			.magento-item-data img {
+				max-width:100%;
+				max-height:none;
+			}
+			</style></div>
+		</aside> 
+			</div>
+
+			<div class="content-block">
+			<aside id="text-8" class="widget widget_text">			<div class="textwidget"><h3 class="widget-title"><a href="/design-creativity/design-inspiration/">Design Inspiration</a></h3></div>
+		</aside><aside id="dpe_fp_widget-13" class="widget widget_dpe_fp_widget">	<ul class="dpe-flexible-posts">
+
+			
+		
+		<li id="post-249618" class="post-249618 post type-post status-publish format-standard has-post-thumbnail hentry category-behind-the-design category-idea-generating-tips category-projects-profiles category-featured-design-news tag-apparel tag-branding-design tag-design-projects tag-in-house-design">
+			<a href="https://www.howdesign.com/design-creativity/behind-the-design/arcteryx-morale-patches/">
+				
+
+				<div class="dpe-large-image">
+				<img width="450" height="329" src="https://s22294.pcdn.co/wp-content/uploads/IMG_6319-450x600-copy.jpg" class="attachment-large size-large wp-post-image" alt="" srcset="https://s22294.pcdn.co/wp-content/uploads/IMG_6319-450x600-copy.jpg 450w, https://s22294.pcdn.co/wp-content/uploads/IMG_6319-450x600-copy-400x292.jpg 400w" sizes="(max-width: 450px) 100vw, 450px" />				<h4 class="title">Arc’teryx Patches Celebrate Community &#038; Individuality</h4>
+				</div>
+			</a>
+
+			
+
+		</li>
+		
+
+	
+	</ul><!-- .dpe-flexible-posts -->
+
+
+</aside> 
+			</div>
+
+			<div class="content-block">
+			<aside class="widget howde-widget"><div id='div-gpt-ad-1532298581776-0' style='height:250px; width:300px;'>
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-300x250-3', [300, 250], 'div-gpt-ad-1532298581776-0').addService(googletag.pubads());
+googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+	googletag.display('div-gpt-ad-1532298581776-0');
+});
+</script>
+	</div>
+</aside> 
+			</div>
+		
+		</div><!-- #secondary --></div>
+	</div><!-- main wrapper -->
+	
+		
+	<div id="sponsored-links">
+		<aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="google-ads">
+<div class="content-block-heading">
+	<div id='div-gpt-ad-1532298644823-0' style='height:250px; width:300px;padding-bottom:20px;'>
+
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-300x250-4', [300, 250], 'div-gpt-ad-1532298644823-0').addService(googletag.pubads());
+	googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+	googletag.display('div-gpt-ad-1532298644823-0');
+});
+</script>
+</div>
+</div></div></div></aside>
+		<aside id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="google-ads">
+<div class="content-block-heading">
+	<div id='div-gpt-ad-1532298779344-0' style='height:250px; width:300px;padding-bottom:20px;'>
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-300x250-5', [300, 250], 'div-gpt-ad-1532298779344-0').addService(googletag.pubads());
+	googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+	googletag.display('div-gpt-ad-1532298779344-0');
+});
+</script>
+</div>
+</div></div></div></aside>		
+		<aside id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="google-ads">
+<div class="content-block-heading">
+	<div id='div-gpt-ad-1532298830955-0' style='height:250px; width:300px;'>
+
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-300x250-6', [300, 250], 'div-gpt-ad-1532298830955-0').addService(googletag.pubads());
+	googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+	googletag.display('div-gpt-ad-1532298830955-0');
+});
+</script>
+</div>
+</div></div></div></aside><aside class="widget howde-widget"><div id='div-gpt-ad-1532298830955-0' style='height:250px; width:300px;'>
+
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/184645914/hd/hd-300x250-6', [300, 250], 'div-gpt-ad-1532298830955-0').addService(googletag.pubads());
+	googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+	googletag.display('div-gpt-ad-1532298830955-0');
+});
+</script>
+</div></aside>	</div>
+
+	<div class="pi-products-container">
+					</div>
+
+	<footer id="colophon" role="contentinfo">
+			<aside id="text-27" class="widget widget_text">			<div class="textwidget"><div class="footer-logo">
+<div class="footer-print-digital">
+<h3>SUBSCRIBE TO HOW Design eNewsletter</h3>
+
+
+<div class="footer-center">
+<a href="https://www.howdesign.com/newsletter/" target="_blank"><img src="https://s22294.pcdn.co/wp-content/uploads/how-ipad.png"  alt="HOW Magazine - iPad Edition" title="HOW eNews" /><br>
+Hello Inbox!</a>
+</div>
+</div>
+
+<div class="footer-print">
+<div class="footer-left">
+<h3>HOW Design</h3>
+<ul>
+<li><a href="https://www.howdesign.com/featured-design-news/">Design News</a></li>
+ <li><a href="https://www.howdesign.com/newsletter/">eNewsletter Subscribe</a></li>
+<li><a href="https://www.howdesignuniversity.com/catalog">HOW Design University</a></li>
+<li> <a href="http://www.mydesignshop.com/how-backissues?lid=howhm" target="_blank">Back Issues</a></li>
+<li><a href="http://www.mydesignshop.com/?lid=howhm" target="_blank">Shop HOW</a></li>
+</ul>
+
+<h3>COMPETITIONS</h3>
+<ul>
+<li><a href="https://www.howdesign.com/design-competitions/logo-design-awards/">Logo</a></li>
+<li><a href="https://www.howdesign.com/design-competitions/international-design-awards/">International</a></li>
+<li><a href="https://www.howdesign.com/design-competitions/in-howse-design-awards/">In-House</a></li>
+<li><a href="https://www.howdesign.com/design-competitions/promotion-design-awards/">Promotion & Marketing</a></li>
+<li><a href="https://www.howdesign.com/design-competitions/poster-design-awards/">Poster</a></li>
+<li><a href="https://www.howdesign.com/design-competitions/design-award-galleries/">Winner Galleries</a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-print" style="margin: 0; border: 0 none;">
+<div class="footer-left">
+<h3>EVENTS</h3>
+<ul>
+<li><a href="http://www.howdesignlive.com/" target="_blank">HOW Design Live</a></li>
+<li><a href="https://www.howdesign.com/how-design-live-podcast/" target="_blank">HOW Design Live Podcast</a></li>
+<li><a href="http://creativefreelancerconference.com/" target="_blank">Creative Freelancers Business</a></li>
+<li><a href="http://inhowseconference.com/" target="_blank">In-House Management</a></li><li><a href="http://www.eiseverywhere.com/ehome/index.php?eventid=74927&amp;tabid=150694" target="_blank">HOW Leadership</a></li>
+<li><a href="http://thepackagedesignconference.com/" target="_blank">Dieline Package Design</a></li>
+<li><a href="http://www.howinteractiveconference.com/" target="_blank">HOW Interactive</a></li>
+
+</ul>
+
+<h3>DESIGN JOBS</h3>
+<ul>
+<li><a href="https://www.howdesign.com/design-jobs/" target="_blank">Browse Jobs</a></li>
+<li> <a href="https://partnerjobs.coroflot.com/post-a-job-form?origin_id=12" target="_blank">Post a Job</a> </li>
+ </ul>
+
+</div>
+</div>
+
+</div>
+
+<div class="footer-links">
+<div class="spaced-links">
+<a href="https://www.howdesign.com/about-how/">About Us</a>
+<a href="https://www.howdesign.com/advertise/">Advertise</a>
+<a href="http://www.mydesignshop.com/affiliate_program"  target="_blank">Affiliate Program</a>
+<a href="https://www.howdesign.com/contact-us/">Contact Us</a>
+<a href="https://www.howdesign.com/faqs">FAQs</a>
+<a href="http://www.howdesignlive.com/">HOW Design Live</a>
+<a href="https://www.howdesign.com/how-board-of-advisors">Board of Advisors</a>
+</div>
+<p><!--begin copyright blurb-->
+  Copyright&copy;  <script>document.write(new Date().getFullYear());</script> <a href="http://www.fwmedia.com/" target="_blank" name="F+W Publications"> F+W</a> All rights reserved | <a href="http://www.fwmedia.com/privacy">Privacy</a></p>
+</div>
+</div>
+		</aside>      <script src="https://js.adsrvr.org/up_loader.1.1.0.js" type="text/javascript"></script>
+       <script type="text/javascript">
+           ttd_dom_ready( function() {
+               if (typeof TTDUniversalPixelApi === 'function') {
+                   var universalPixelApi = new TTDUniversalPixelApi();
+                   universalPixelApi.init("eac6kka", ["qtsbsqz"], "https://insight.adsrvr.org/track/up");
+               }
+           });
+       </script>
+	</footer><!-- #colophon -->
+
+</div><!-- page -->
+</div><!-- site wrapper -->
+<!-- ngg_resource_manager_marker --><script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.howdesign.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var themeMyLogin = {"action":"","errors":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/theme-my-login/assets/scripts/theme-my-login.min.js?ver=7.0.14'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+
+var nextgen_lightbox_settings = {"static_path":"","context":"all_images_direct"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/nextgen_gallery_display/static/common.js?ver=3.2.4'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/lightbox_context.js?ver=3.2.4'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/jquery.easing-1.3.pack.js?ver=3.2.4'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/jquery.fancybox-1.3.4.pack.js?ver=3.2.4'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/nextgen_fancybox_init.js?ver=3.2.4'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-includes/js/comment-reply.min.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/themes/hd-twentytwelve/js/top-navigation.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/themes/hd-twentytwelve/js/navigation.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=3.1.1'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.7.1.1'></script>
+<script type='text/javascript' src='https://www.howdesign.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ6THQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script type="text/javascript">
+if(typeof _satellite !== "undefined"){
+  _satellite.pageBottom();
+}
+</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"62f380209b","applicationID":"309219105","transactionName":"ZlNUNxdQWhZTWk0KWl8ZdwARWFsLHUpQDVJdUw==","queueTime":0,"applicationTime":217,"atts":"ShRXQV9KSRg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
